@@ -1,0 +1,315 @@
+/* ================================
+   RESET BÁSICO
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #111;
+  background: #faf9f7;
+}
+
+/* ================================
+   CONTENEDOR GLOBAL
+================================ */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ================================
+   SECCIONES
+================================ */
+.section {
+  padding: 96px 0;
+}
+
+.section.soft {
+  background: #f1f1f1;
+}
+
+.section.dark {
+  background: #0d0d0d;
+  color: #fff;
+}
+
+/* ================================
+   HERO ULTRA CENTRADO
+================================ */
+.hero {
+  position: relative;
+}
+
+.hero.hero-centered {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  text-align: center;
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 140, 42, 0.12),
+    transparent 60%
+  );
+}
+
+/* anulamos el grid SOLO en hero centrado */
+.hero.hero-centered .hero-grid {
+  display: block;
+}
+
+/* contenedor */
+.hero.hero-centered .container {
+  max-width: 800px;
+}
+
+/* texto */
+.hero.hero-centered .hero-text {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* título principal */
+.hero.hero-centered h1 {
+  font-size: 56px;
+  line-height: 1.08;
+  margin-bottom: 24px;
+}
+
+/* subtítulo */
+.hero.hero-centered h1 span {
+  display: block;
+  margin-top: 16px;
+  font-weight: 500;
+  font-size: 34px;
+  opacity: 0.9;
+}
+
+/* texto principal */
+.hero.hero-centered .lead {
+  margin: 36px auto 48px;
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ================================
+   CENTRADO GENERAL
+================================ */
+.center {
+  text-align: center;
+}
+
+.max {
+  max-width: 720px;
+  margin: 24px auto;
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+/* ================================
+   BOTONES
+================================ */
+button {
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn-primary {
+  background: #ff8c2a;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #ff8c2a;
+  color: #ff8c2a;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.btn-primary.small {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+/* ================================
+   BENEFICIOS
+================================ */
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin: 40px auto;
+  max-width: 520px;
+}
+
+.benefits li {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+/* ================================
+   PACKS
+================================ */
+.packs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 64px;
+}
+
+.pack {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.pack h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.pack span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #ff8c2a;
+}
+
+.pack p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.pack.featured {
+  transform: translateY(-12px);
+  border: 2px solid #ff8c2a;
+}
+
+.pack.full {
+  grid-column: span 3;
+}
+
+/* ================================
+   PASOS
+================================ */
+.steps {
+  list-style: decimal;
+  max-width: 520px;
+  margin: 40px auto;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.steps li {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+/* ================================
+   LOGO FINAL
+================================ */
+.logo {
+  max-width: 160px;
+  margin-bottom: 32px;
+  opacity: 0.9;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .hero.hero-centered {
+    min-height: auto;
+    padding: 120px 0;
+  }
+
+  .hero.hero-centered h1 {
+    font-size: 40px;
+  }
+
+  .hero.hero-centered h1 span {
+    font-size: 26px;
+  }
+
+  .packs {
+    grid-template-columns: 1fr;
+  }
+
+  .pack.full {
+    grid-column: span
+     1;
+  }
+/* =================================
+   EYEBROW / BRAND BADGE PREMIUM
+================================= */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 22px;
+  margin-bottom: 32px;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: #ff8c2a;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 140, 42, 0.18),
+    rgba(255, 140, 42, 0.08)
+  );
+
+  border: 1px solid rgba(255, 140, 42, 0.35);
+  border-radius: 999px;
+
+  box-shadow:
+    0 10px 30px rgba(255, 140, 42, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+
+  backdrop-filter: blur(6px);
+
+  /* animación sutil */
+  animation: eyebrowFade 0.9s ease-out both;
+}
+
+/* centra perfecto en hero */
+.hero-centered .eyebrow {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* animación */
+@keyframes eyebrowFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+}

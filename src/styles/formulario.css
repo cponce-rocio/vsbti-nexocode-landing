@@ -1,0 +1,617 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+:root {
+  --azul: #1F4E79;
+  --azul-oscuro: #163a59;
+  --azul-suave: #3b82f6;
+  --verde: #4CAF50;
+  --naranja: #F26522;
+  --fondo: #F4F7FB;
+  --texto: #1e293b;
+  --gris-suave: #e2e8f0;
+}
+
+/* ===================== FONDO PREMIUM ANIMADO ===================== */
+
+.main-layout {
+  background: linear-gradient(120deg, #f8fafc, #eef3f9, #f1f5f9);
+  background-size: 300% 300%;
+  animation: gradientMove 18s ease infinite;
+  font-family: 'Inter', sans-serif;
+  color: var(--texto);
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glow azul flotante */
+
+.main-layout::before {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+  top: -250px;
+  right: -250px;
+  animation: floatGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow {
+  from { transform: translateY(0px); }
+  to { transform: translateY(40px); }
+}
+
+.container-pro {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.container-pro > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================== HEADER ===================== */
+
+.header-impact {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.highlight-tag {
+  font-family: 'Marcellus', serif; /* misma tipografía */
+  font-size: 1.5rem;               /* mismo tamaño que Respira */
+  letter-spacing: 1.2px;
+  font-weight: 500;
+  text-transform: none;            /* quitamos uppercase para coherencia */
+  color: #3b82f6;
+  display: inline-block;
+  opacity: 0;
+  animation: fadeSlide 1.4s ease forwards, softBreath 4s ease-in-out infinite 2s;
+}
+
+/* Entrada suave */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respiración sutil */
+@keyframes softBreath {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.impact-title {
+  font-size: 3.6rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--azul), var(--azul-suave), #60a5fa);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientText 6s linear infinite;
+  letter-spacing: -1px;
+  margin: 15px 0;
+  line-height: 1.1;
+}
+
+@keyframes gradientText {
+  to { background-position: 200% center; }
+}
+
+.impact-title span {
+  font-weight: 400;
+  color: #64748b;
+}
+
+.p-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  max-width: 680px;
+  margin: 30px auto;
+  color: #475569; /* tono gris azulado más suave */
+  line-height: 1.8;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+
+/* Parte fuerte más elegante y suave */
+.p-intro strong {
+  font-weight: 700;
+  color: #334e68; /* azul profundo suave */
+}
+
+/* ===================== MINI CARDS ===================== */
+
+.cards-row {
+  display: flex;
+  gap: 25px;
+  margin: 50px 0;
+}
+
+.mini-card {
+  background: white;
+  flex: 1;
+  padding: 30px 20px;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.4s ease;
+  border: 1px solid rgba(59,130,246,0.1);
+  box-shadow: 0 15px 40px rgba(31,78,121,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.mini-card::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(59,130,246,0.1), transparent 60%);
+  top: -100%;
+  left: -100%;
+  transition: 0.6s;
+}
+
+.mini-card:hover::before {
+  top: -50%;
+  left: -50%;
+}
+
+.mini-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(31,78,121,0.18);
+}
+
+.step-num {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--azul);
+  opacity: 0.15;
+  margin-bottom: 10px;
+}
+
+/* ===================== FORM SECTIONS ===================== */
+
+.form-premium {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.form-section {
+  background: white;
+  padding: 50px;
+  border-radius: 25px;
+  border: 1px solid var(--gris-suave);
+  box-shadow: 0 15px 50px rgba(15, 23, 42, 0.06);
+  transition: 0.4s ease;
+}
+
+.form-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 70px rgba(31,78,121,0.12);
+}
+
+/* ===================== TITLES ===================== */
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--azul);
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 800;
+}
+
+/* ICONOS PREMIUM */
+
+/* ===================== ICONOS CON IDENTIDAD ===================== */
+
+.section-title svg {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border-radius: 16px;
+  color: white;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* 🔵 INFO – Datos básicos */
+.section-title.info svg {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  box-shadow: 0 10px 30px rgba(37,99,235,0.35);
+}
+
+/* 🟣 DIAGNÓSTICO – Puzzle */
+.section-title.diagnostico svg {
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+  box-shadow: 0 10px 30px rgba(124,58,237,0.35);
+}
+
+/* 💡 TALENTO */
+.section-title.talento svg {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  box-shadow: 0 10px 30px rgba(245,158,11,0.35);
+}
+
+/* 🎯 IMPACTO */
+.section-title.impacto svg {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  box-shadow: 0 10px 30px rgba(239,68,68,0.35);
+}
+
+/* 📈 VISIÓN */
+.section-title.vision svg {
+  background: linear-gradient(135deg, #10b981, #047857);
+  box-shadow: 0 10px 30px rgba(16,185,129,0.35);
+}
+
+/* 🛡 COMPROMISO */
+.section-title.compromiso svg {
+  background: linear-gradient(135deg, #0ea5e9, #0369a1);
+  box-shadow: 0 10px 30px rgba(14,165,233,0.35);
+}
+
+/* 🔧 ESTRATEGIA */
+.section-title.estrategia svg {
+  background: linear-gradient(135deg, #f97316, #c2410c);
+  box-shadow: 0 10px 30px rgba(249,115,22,0.35);
+}
+
+/* Hover elegante */
+
+.section-title:hover svg {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.section-title svg:hover {
+  transform: scale(1.1) rotate(6deg);
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===================== INPUTS ===================== */
+
+.grid-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--azul);
+}
+
+input,
+textarea,
+.styled-select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--gris-suave);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  background: #f8fafc;
+}
+
+input:focus,
+textarea:focus,
+.styled-select:focus {
+  outline: none;
+  border-color: var(--azul-suave);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+  background: white;
+}
+
+/* ===================== OPTIONS ===================== */
+
+.selection-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.custom-option {
+  padding: 18px;
+  border: 1px solid var(--gris-suave);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background: #f8fafc;
+  font-weight: 500;
+}
+
+.custom-option:hover {
+  transform: translateY(-4px);
+  border-color: var(--azul-suave);
+  box-shadow: 0 15px 30px rgba(31,78,121,0.12);
+}
+
+.custom-option input {
+  display: none;
+}
+
+.custom-option.active {
+  background: linear-gradient(135deg, var(--azul), var(--azul-suave));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 15px 30px rgba(31,78,121,0.25);
+}
+
+/* ===================== FINAL MESSAGE ===================== */
+
+.final-message-card {
+  background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+  padding: 30px;
+  border-radius: 20px;
+  border-left: 6px solid var(--verde);
+  text-align: center;
+  font-size: 1.05rem;
+  box-shadow: 0 10px 30px rgba(16,185,129,0.08);
+}
+
+/* ===================== BUTTON ===================== */
+
+.btn-impact-main {
+  background: linear-gradient(135deg, var(--naranja), #ff7a3d);
+  color: white;
+  padding: 22px 50px;
+  border: none;
+  border-radius: 60px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  transition: 0.3s ease;
+  box-shadow: 0 20px 40px rgba(242, 101, 34, 0.3);
+}
+
+.btn-impact-main:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(242, 101, 34, 0.4);
+}
+
+.btn-impact-main:active {
+  transform: scale(0.98);
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 768px) {
+  .grid-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-row {
+    flex-direction: column;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-title {
+    font-size: 2.5rem;
+  }
+
+  .form-section {
+    padding: 30px;
+  }
+}
+
+/* ===================== CARDS IMPACTO PREMIUM ===================== */
+
+.cards-row {
+  display: flex;
+  gap: 25px;
+  margin: 50px 0;
+}
+
+/* BASE */
+.mini-card {
+  flex: 1;
+  padding: 35px 25px;
+  border-radius: 24px;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  color: #1e293b;
+  backdrop-filter: blur(6px);
+}
+
+/* 1 - Azul suave */
+.mini-card.etapa-1 {
+  background: linear-gradient(135deg, #e0ecff, #c7dcff);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.12);
+}
+
+/* 2 - Violeta suave */
+.mini-card.etapa-2 {
+  background: linear-gradient(135deg, #efe7ff, #e2d4ff);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.12);
+}
+
+/* 3 - Verde suave */
+.mini-card.etapa-3 {
+  background: linear-gradient(135deg, #dcfce7, #c7f3d6);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  box-shadow: 0 15px 35px rgba(16, 185, 129, 0.12);
+}
+
+/* Hover elegante */
+.mini-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 55px rgba(15, 23, 42, 0.15);
+}
+
+/* Número más fino y armónico */
+.step-num {
+  font-size: 2.6rem;
+  font-weight: 800;
+  opacity: 0.12;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+/* Número fuerte contrastando con su fondo */
+
+/* 01 - Azul fuerte */
+.mini-card.etapa-1 .step-num {
+  color: #1d4ed8; /* azul intenso */
+  opacity: 0.9;
+}
+
+/* 02 - Violeta fuerte */
+.mini-card.etapa-2 .step-num {
+  color: #6d28d9; /* violeta intenso */
+  opacity: 0.9;
+}
+
+/* 03 - Verde fuerte */
+.mini-card.etapa-3 .step-num {
+  color: #059669; /* verde intenso */
+  opacity: 0.9;
+}
+/* ===================== INTRO CLOSING IMPACT ===================== */
+
+/* ===================== INTRO CLOSING VERTICAL ===================== */
+
+/* ===================== INTRO CLOSING IMPACTO REAL ===================== */
+
+/* ===================== INTRO CLOSING CINEMATOGRÁFICO ===================== */
+
+.intro-closing {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Animación base fade + subida */
+.intro-closing p {
+  font-family: 'Marcellus', serif;
+  font-size: 1.5rem;
+  letter-spacing: 1.2px;
+  padding: 18px 42px;
+  border-radius: 60px;
+  font-weight: 500;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(10px);
+  color: #334155;
+  box-shadow: 0 15px 35px rgba(15,23,42,0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* Secuencia */
+.intro-closing p:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+.intro-closing p:nth-child(2) {
+  animation-delay: 1.1s;
+}
+
+.intro-closing p:nth-child(3) {
+  animation-delay: 1.8s;
+}
+
+/* Fade + subida */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPIRA - BREATHING REAL ================= */
+
+.intro-closing p:nth-child(1) {
+  animation: fadeUp 1.2s ease forwards, breathing 4s ease-in-out infinite 2.2s;
+}
+
+@keyframes breathing {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* ================= LEE CON CALMA ================= */
+
+.intro-closing p:nth-child(2) {
+  font-size: 1.55rem;
+  opacity: 0;
+}
+
+/* ================= RESPONDE CON HONESTIDAD ================= */
+
+.intro-closing p:last-child {
+  font-size: 1.8rem;
+  letter-spacing: 1.5px;
+  background: linear-gradient(135deg, #b8a99f, #a08f85);
+  color: white;
+  box-shadow: 0 25px 55px rgba(160,143,133,0.35);
+  animation: fadeUp 1.2s ease forwards, subtleGlow 3.5s ease-in-out infinite 2.5s;
+}
+
+/* Glow sutil premium */
+@keyframes subtleGlow {
+  0%, 100% {
+    box-shadow: 0 25px 55px rgba(160,143,133,0.35);
+  }
+  50% {
+    box-shadow: 0 30px 65px rgba(160,143,133,0.55);
+  }
+}

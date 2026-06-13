@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #faf7f2;
+  --bg-soft: #f3efe9;
+  --card: #ffffff;
+
+  --primary: #ff8c2a;
+  --primary-dark: #e07a1f;
+
+  --text: #1f2937;
+  --muted: #6b7280;
+}
+
+/* ================= RESET ================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(
+    circle at top,
+    #fffaf3 0%,
+    var(--bg) 40%,
+    var(--bg-soft) 100%
+  );
+  color: var(--text);
+}
+
+/* ================= LAYOUT ================= */
+
+section {
+  padding: 120px 24px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+/* ================= HERO PREMIUM ================= */
+
+.hero-premium {
+  position: relative;
+  padding: 150px 24px 160px;
+  background:
+    radial-gradient(circle at top, rgba(255,140,42,0.25), transparent 60%),
+    linear-gradient(180deg, #fff6ec 0%, #fffdf9 100%);
+  overflow: hidden;
+}
+
+.hero-glow {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 140, 42, 0.25),
+    transparent 65%
+  );
+  filter: blur(120px);
+}
+
+.hero-text {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+/* ================= EYEBROW ================= */
+
+.eyebrow {
+  display: inline-block;
+  padding: 14px 36px;
+  margin-bottom: 56px;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+
+  color: var(--primary);
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,140,42,0.35),
+    rgba(255,140,42,0.1)
+  );
+
+  border-radius: 999px;
+  border: 1px solid rgba(255,140,42,0.4);
+  backdrop-filter: blur(6px);
+}
+
+/* ================= TITULOS ================= */
+
+.hero-text h1 {
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+.hero-text h1 span {
+  display: block;
+  margin-top: 14px;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 400;
+  color: #444;
+}
+
+/* ================= TEXTO ================= */
+
+.lead {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.max {
+  max-width: 760px;
+  margin: 36px auto;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* ================= BOTONES ================= */
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), #ffb26a);
+  color: #fff;
+  padding: 16px 40px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+
+  box-shadow: 0 16px 40px rgba(255,140,42,0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 60px rgba(255,140,42,0.55);
+}
+
+.btn-primary.small {
+  padding: 12px 26px;
+  font-size: 14px;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 14px 34px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* ================= BENEFICIOS ================= */
+
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin: 56px auto;
+  max-width: 560px;
+}
+
+.benefits li {
+  margin-bottom: 14px;
+  padding-left: 26px;
+  position: relative;
+}
+
+.benefits li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* ================= PACKS ================= */
+
+.packs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 72px;
+}
+
+.pack {
+  background: var(--card);
+  border-radius: 24px;
+  padding: 44px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.pack:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 45px 90px rgba(0,0,0,0.18);
+}
+
+.pack h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.pack span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--primary);
+}
+
+.pack.featured {
+  border: 2px solid var(--primary);
+  background: linear-gradient(180deg, #fff, #fff7ef);
+}
+
+.pack.full {
+  grid-column: span 3;
+}
+
+/* ================= PASOS ================= */
+
+.steps {
+  max-width: 600px;
+  margin: 48px auto;
+  text-align: left;
+}
+
+.steps li {
+  margin-bottom: 14px;
+}
+
+/* ================= LOGO ================= */
+
+.logo {
+  width: 140px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+/* ================= SECCIONES ================= */
+
+.section.soft {
+  background: linear-gradient(180deg, #f6f3ee, #ece7df);
+}
+
+.section.dark {
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  color: #fff;
+}
+
+/* ================= REVEAL ================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  section {
+    padding: 80px 20px;
+  }
+
+  .packs {
+    grid-template-columns: 1fr;
+  }
+
+  .pack.full {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 100px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 340px;
+  }
+}
