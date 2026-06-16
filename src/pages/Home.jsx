@@ -78,9 +78,7 @@ useEffect(() => {
       description:
         "Convierte tu experiencia, talento o historia en tu primer producto digital profesional listo para vender",
       includes: [
-        "E-book Kindle profesional listo para publicar",
-        "Cuaderno / Workbook editable",
-        "Planner de 7 días orientado a acción",
+        "E-book Kindle - libro físico listo para publicar",
         "Guía Ikigai + Escalera de Valor",
       ],
       investment: "USD 499 · EUR 499",
